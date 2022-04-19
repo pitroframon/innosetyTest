@@ -1,0 +1,19 @@
+type Author {
+id: ID!
+name: String
+books: [Book]
+}
+type Book {
+id: ID!
+title: String
+authors: [Author]
+}
+type Mutation {
+saveAuthor(name: String, books: [Book]): Author
+saveBook(title: String, authors: [Author]): Book
+}
+type Query {
+getAuthor(name: String!): Author
+getBooksByAuthor(author: Author): [Book]
+getAllBooks: [Book]
+}
